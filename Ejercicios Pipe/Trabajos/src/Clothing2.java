@@ -37,6 +37,15 @@ public class Clothing2{
     public void setTalla(String talla) {
         this.talla = talla;
     }
+
+    @Override
+    public String toString(){
+        return getDescripcion() +","+ getTalla() +","+ getPrecio();
+    }
+
+
+
+
     public static void main(String[] args) {
 
     }
