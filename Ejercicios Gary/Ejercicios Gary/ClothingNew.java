@@ -49,7 +49,7 @@ public class Clothing
 
         @Override 
         public String toString(){
-                return
+                return getDescription()+","+getPrice()+ ","+getSize();
         }
 
 
