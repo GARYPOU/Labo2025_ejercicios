@@ -1,14 +1,16 @@
 package objetos;
 
-public class Clothing
+public class ClothingNew implements Comparable<ClothingNew>
 
 {
 
         private String description;
         private double price;
-        private char size='M';
+        private char size='s';
+        private final double min_tax=1.2;
+        private final int min_price=10;
 
-        public Clothing(String description, double price, char size){
+        public ClothingNew(String description, double price, char size){
                 this.description=description;
                 this.price=price;
                 this.size=size;
@@ -24,10 +26,14 @@ public class Clothing
         }
 
         public double getPrice() {
+                price = price * min_tax;
                 return price;
         }
 
         public void setPrice(double price) {
+                if(price<min_price) {
+                        price = min_price;
+                }
                 this.price = price;
         }
 
@@ -46,4 +52,11 @@ public class Clothing
 
           
         }
-    }
+
+        @Override
+        public int compareTo(ClothingNew o) {
+                return this.description.compareTo(o.description);
+        }
+
+
+}
