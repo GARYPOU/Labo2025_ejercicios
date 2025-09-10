@@ -53,7 +53,7 @@ public class CustomerNew extends Persona
     double promedio=0.0;
     int cantidad=0;
     double promi =0.0;
-
+    try{
     for (ClothingNew item : items){
         if(getSize()==item.getSize()) {
             System.out.println("Iteams datos:"+" "+item.getDescription()+" "+ item.getPrice()+ " "+item.getSize());
@@ -63,7 +63,7 @@ public class CustomerNew extends Persona
 
         }
     }
-    try{
+    
        promi=promedio/cantidad;
     }
     catch (ArithmeticException e){
